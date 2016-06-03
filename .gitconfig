@@ -1,0 +1,47 @@
+[alias]
+    st = status -s
+    co = checkout
+    ci = commit
+    df = diff
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    out = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit @{u}..HEAD
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+    contributors = shortlog --summary --numbered
+
+    ; Commit all changes
+    ca = !git add -A && git commit -av
+    
+    ; Remove branches that have already been merged with master
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+    ; JSHint modified JS files
+    jshint = !jshint $(git diff-index --name-only HEAD | grep -E "\\.js$")
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+
+[push]
+	default = current
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[include]
+    path = ~/.gitconfig.local
