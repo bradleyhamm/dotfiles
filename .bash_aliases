@@ -18,4 +18,4 @@ alias vdestroy='vagrant destroy'
 ## Grepping ##
 ##############
 alias pygrep='grep -r --include \*.py --exclude "test_*"'
-alias jsgrep='grep -r --include \*.js --exclude "*.min.js*"'
+alias jsgrep='grep -r --include \*.js --exclude "test_*" --exclude "*.spec.js" --exclude "*.setup.js" --exclude "*.min.js*"'
