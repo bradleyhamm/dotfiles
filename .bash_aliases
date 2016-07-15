@@ -19,3 +19,6 @@ alias vdestroy='vagrant destroy'
 ##############
 alias pygrep='grep -r --include \*.py --exclude "test_*"'
 alias jsgrep='grep -r --include \*.js --exclude "test_*" --exclude "*.spec.js" --exclude "*.setup.js" --exclude "*.min.js*"'
+
+alias now='date +%Y%m%d-%s'
+alias xclip='xclip -selection clipboard'

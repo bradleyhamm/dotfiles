@@ -3,6 +3,7 @@
     co = checkout
     ci = commit
     df = diff
+    dfh = diff HEAD
     l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     out = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit @{u}..HEAD
     tags = tag -l
@@ -18,6 +19,9 @@
 
     ; JSHint modified JS files
     jshint = !jshint $(git diff-index --name-only HEAD | grep -E "\\.js$")
+
+    ; Archive
+    backup = !git archive HEAD | bzip2
 
 [core]
     editor = vim
