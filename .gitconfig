@@ -10,10 +10,8 @@
     branches = branch -a
     remotes = remote -v
     contributors = shortlog --summary --numbered
+    stashow = "!sh -c 'git stash show -p stash@{$1}' -"
 
-    ; Commit all changes
-    ca = !git add -A && git commit -av
-    
     ; Remove branches that have already been merged with master
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
@@ -25,7 +23,7 @@
 
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
+	excludesfile = /home/bradley/.gitignore_global
 	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 
 [push]
