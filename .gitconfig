@@ -10,7 +10,11 @@
     branches = branch -a
     remotes = remote -v
     contributors = shortlog --summary --numbered
-    stashow = "!sh -c 'git stash show -p stash@{$1}' -"
+    stl = stash list
+    sts = "!sh -c 'git stash show -p stash@{$1}' -"
+    sta = "!sh -c 'git stash apply stash@{$1}' -"
+    stp = "!sh -c 'git stash pop stash@{$1}' -"
+    std = "!sh -c 'git stash drop stash@{$1}' -"
 
     ; Remove branches that have already been merged with master
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
