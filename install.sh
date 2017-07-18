@@ -27,8 +27,6 @@ print_error() {
 }
 
 main() {
-    cd "$(dirname "$BASH_SOURCE")"
-
     for file in $DOT_FILES; do
         source_file="$(pwd)/$file"
         target_file="$HOME/$file"
@@ -49,6 +47,11 @@ main() {
             ln -fs "$source_file" "$target_file" && print_success "$target_file → $source_file"
         fi
     done
+
+    if ! grep -q bash_profile $HOME/.bashrc; then
+        echo >> $HOME/.bashrc
+        echo '[ -n "$PS1" ] && source ~/.bash_profile' >> $HOME/.bashrc
+    fi
 }
 
 main
