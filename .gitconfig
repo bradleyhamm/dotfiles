@@ -1,4 +1,5 @@
 [alias]
+    git = !exec git
     st = status -s
     co = checkout
     ci = commit
