@@ -1,6 +1,6 @@
-########################################################
-## Some useful functions borrowed from @mathiasbynens ##
-########################################################
+###########################
+## Some useful functions ## 
+###########################
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
@@ -14,26 +14,6 @@ function server() {
 # Run `dig` and display the most useful info
 function digga() {
     dig +nocmd "$1" any +multiline +noall +answer;
-}
-
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-function a() {
-    if [ $# -eq 0 ]; then
-        atom .;
-    else
-        atom "$@";
-    fi;
-}
-
-# `v` with no arguments opens the current directory in Vim, otherwise opens the
-# given location
-function v() {
-    if [ $# -eq 0 ]; then
-        vim .;
-    else
-        vim "$@";
-    fi;
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
