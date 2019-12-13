@@ -1,3 +1,4 @@
+syntax on                   " syntax highlighting
 colorscheme slate           " color scheme
 set whichwrap+=<,>,h,l,[,]  " wrap cursor movement between lines
 set nostartofline           " vertical movements not effected by blank lines
