@@ -11,6 +11,7 @@
     branches = branch -a
     branch = branch -vv
     remotes = remote -v
+    reflog = reflog --date=iso
     contributors = shortlog --summary --numbered
     stl = stash list
     sts = "!sh -c 'git stash show -p stash@{$1}' -"

@@ -2,6 +2,7 @@ export PATH=~/bin:$PATH
 
 # Make vim the default editor.
 export EDITOR='vim';
+export VISUAL='vim';
 
 # Increase Bash history size.
 export HISTSIZE='77777';
